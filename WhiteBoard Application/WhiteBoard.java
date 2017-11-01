@@ -430,7 +430,7 @@ class PadDrawing extends JComponent {
 						String pkt = oldX + " " + oldY + " " + oldX + " " + oldY + " " + coloring + " "
 								+ eraserOn;
 						// new datagram packet
-						DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, 5001);
+						DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, thePort);
 						// packet send
 						mcSocket.send(dp);
 					} catch (Exception e1) {
@@ -465,7 +465,7 @@ class PadDrawing extends JComponent {
 						String pkt = oldX + " " + oldY + " " + currentX + " " + currentY + " " + coloring + " "
 								+ eraserOn;
 						// new datagram packet
-						DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, 5001);
+						DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, thePort);
 						// packet send
 						mcSocket.send(dp);
 					} catch (Exception e1) {
@@ -508,7 +508,7 @@ class PadDrawing extends JComponent {
 				// string containing the packet
 				String pkt = getSize().width + " " + getSize().height + " " + getSize().width + " " + getSize().height + " " + coloring + " " + 1;
 				// new datagram packet
-				DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, 5001);
+				DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, thePort);
 				// packet send
 				mcSocket.send(dp);
 			} catch (Exception e1) {
@@ -557,7 +557,7 @@ class PadDrawing extends JComponent {
 				// string containing the packet
 				String pkt = oldX + " " + oldY + " " + currentX + " " + currentY + " " + coloring + " " + 2;
 				// new datagram packet
-				DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, 5001);
+				DatagramPacket dp = new DatagramPacket(pkt.getBytes(), pkt.length(), group, thePort);
 				// packet send
 				mcSocket.send(dp);
 			} catch (Exception e1) {
